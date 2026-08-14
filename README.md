@@ -39,3 +39,4 @@ Open `index.html` in a browser.
 
 ## Note
 This is a frontend project and uses EmailJS for sending mail; real credentials must be added to the script for production use.
+ 
