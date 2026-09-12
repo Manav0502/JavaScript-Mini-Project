@@ -1,205 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VelvetClean | Premium Laundry & Fabric Care</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>FreshClean Laundry Services</title>
     <link rel="stylesheet" href="style.css">
+    <!-- EmailJS SDK CDN -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
-    <nav class="navbar" id="home">
-        <div class="nav-container">
-            <div class="logo">
-                <i class="fa-solid fa-shirt"></i>
-                <span>VelvetClean</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#booking-section">Services</a></li>
-                <li><a href="#quality">About Us</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-            <div class="user-profile">
-                <span class="user-badge"><i class="fa-solid fa-circle-user"></i> Manav Agarwal</span>
-            </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <h2>FreshClean</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#booking-section">Services</a></li>
+            <li><a href="#quality-section">About Us</a></li>
+            <li><a href="#footer">Contact Us</a></li>
+        </ul>
+        <div class="user-profile">
+            <span>John Doe</span>
         </div>
     </nav>
 
-    <section class="hero-section">
-        <div class="hero-container">
-            <div class="hero-left">
-                <h1>Revitalize Your Fabrics with <span class="highlight">Bespoke Laundry Care</span></h1>
-                <p>From eco-friendly dry cleaning to express wash and fold, we treat your garments with precision and affection. Experience unparalleled freshness today!</p>
-                <button class="btn-hero" id="heroBookBtn">
-                    <i class="fa-regular fa-calendar-check"></i> Book a service today!
-                </button>
-            </div>
-            <div class="hero-right">
-                <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=600&auto=format&fit=crop&q=80" alt="Laundry Service Machine">
-                </div>
-            </div>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-container">
+        <div class="hero-left">
+            <h1>Revitalize Your Clothes with Expert Laundry Services!</h1>
+            <p>From premium dry cleaning to swift wash and fold, we deliver care and convenience. Schedule a pickup and rediscover freshness today!</p>
+            <button id="hero-btn" class="btn-primary">Book a Service Today</button>
+        </div>
+        <div class="hero-right">
+            <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=600&q=80" alt="Laundry Machine">
         </div>
     </section>
 
-    <section class="achievements-section">
-        <div class="achievements-container">
-            <h2 class="achievements-title">Our Achievements</h2>
-            <div class="stat-box">
-                <span class="stat-number">15+</span>
-                <span class="stat-label">Laundry Services</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">240+</span>
-                <span class="stat-label">Happy Customers</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-number">2+ Yrs</span>
-                <span class="stat-label">Experience</span>
-            </div>
+    <!-- Service Achievements Section -->
+    <section class="achievements-bar">
+        <div class="achievements-title">
+            <h3>Our Achievements</h3>
+        </div>
+        <div class="achievement-item">
+            <h4>15+</h4>
+            <p>Laundry Services</p>
+        </div>
+        <div class="achievement-item">
+            <h4>240+</h4>
+            <p>Happy Customers</p>
+        </div>
+        <div class="achievement-item">
+            <h4>2+ Yrs</h4>
+            <p>Experience</p>
         </div>
     </section>
 
-    <section class="booking-section" id="booking-section">
-        <div class="booking-container">
-            <div class="services-left-card">
-                <div class="services-header">
-                    <h2>Our Services</h2>
-                    <p>Click on the Add Item button to add the services to your cart</p>
-                </div>
-
-                <div class="services-list" id="servicesList"></div>
-
-                <div class="cart-info-footer">
-                    <i class="fa-solid fa-circle-info"></i>
-                    <span>Add the items to the cart and book now</span>
-                </div>
-            </div>
-
-            <div class="booking-right-column">
-                <div class="cart-summary-card">
-                    <h3>Added Items</h3>
-                    <div class="table-wrapper">
-                        <table class="cart-table">
-                            <thead>
-                                <tr>
-                                    <th>S.No</th>
-                                    <th>Service Name</th>
-                                    <th>Price</th>
-                                </tr>
-                            </thead>
-                            <tbody id="cartItemsBody"></tbody>
-                        </table>
-                        <div class="empty-cart-text" id="emptyCartMsg">No items added yet.</div>
-                    </div>
-                    <div class="total-row">
-                        <span>Total Amount</span>
-                        <span class="total-price" id="totalAmountDisplay">₹0.00</span>
+    <!-- Booking Services Section -->
+    <section id="booking-section" class="booking-container">
+        <!-- Left Div: Available Services -->
+        <div class="services-left">
+            <h2>Our Services</h2>
+            <p class="sub-text">Click on the Add button to add services to your cart.</p>
+            
+            <div class="service-list">
+                <div class="service-item">
+                    <span>Dry Cleaning - ₹200.00</span>
+                    <div class="btn-group">
+                        <button class="btn-add" onclick="addToCart('Dry Cleaning', 200)">Add Item +</button>
+                        <button class="btn-remove" onclick="removeFromCart('Dry Cleaning', 200)">Remove Item -</button>
                     </div>
                 </div>
-
-                <div class="booking-form-card">
-                    <h3>Book Now</h3>
-                    <form id="bookingForm">
-                        <div class="form-group">
-                            <label for="fullName">Full Name</label>
-                            <input type="text" id="fullName" placeholder="Abc Xyz" required>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email ID</label>
-                                <input type="email" id="email" placeholder="mail@id.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" placeholder="9876543210" required>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn-submit-booking" id="bookNowBtn">Book now</button>
-                        <div class="confirmation-message" id="confirmationMsg" aria-live="polite"></div>
-                    </form>
+                <div class="service-item">
+                    <span>Wash & Fold - ₹100.00</span>
+                    <div class="btn-group">
+                        <button class="btn-add" onclick="addToCart('Wash & Fold', 100)">Add Item +</button>
+                        <button class="btn-remove" onclick="removeFromCart('Wash & Fold', 100)">Remove Item -</button>
+                    </div>
                 </div>
+                <div class="service-item">
+                    <span>Ironing - ₹30.00</span>
+                    <div class="btn-group">
+                        <button class="btn-add" onclick="addToCart('Ironing', 30)">Add Item +</button>
+                        <button class="btn-remove" onclick="removeFromCart('Ironing', 30)">Remove Item -</button>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <span>Stain Removal - ₹500.00</span>
+                    <div class="btn-group">
+                        <button class="btn-add" onclick="addToCart('Stain Removal', 500)">Add Item +</button>
+                        <button class="btn-remove" onclick="removeFromCart('Stain Removal', 500)">Remove Item -</button>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <span>Leather & Suede Cleaning - ₹999.00</span>
+                    <div class="btn-group">
+                        <button class="btn-add" onclick="addToCart('Leather & Suede Cleaning', 999)">Add Item +</button>
+                        <button class="btn-remove" onclick="removeFromCart('Leather & Suede Cleaning', 999)">Remove Item -</button>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <span>Wedding Dress Cleaning - ₹2800.00</span>
+                    <div class="btn-group">
+                        <button class="btn-add" onclick="addToCart('Wedding Dress Cleaning', 2800)">Add Item +</button>
+                        <button class="btn-remove" onclick="removeFromCart('Wedding Dress Cleaning', 2800)">Remove Item -</button>
+                    </div>
+                </div>
+            </div>
+            <p class="cart-info-note">Add the items to the cart and book now</p>
+        </div>
+
+        <!-- Right Div: Cart & Booking Form -->
+        <div class="services-right">
+            <!-- First div: Cart summary -->
+            <div class="cart-box">
+                <h3>Added Items</h3>
+                <table id="cart-table">
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Service Name</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items">
+                        <tr id="empty-cart-row">
+                            <td colspan="3">No items added yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="total-bar">
+                    <strong>Total Amount: ₹<span id="total-price">0.00</span></strong>
+                </div>
+            </div>
+
+            <!-- Second div: Booking Details -->
+            <div class="booking-form-box">
+                <h3>Book Now</h3>
+                <form id="booking-form">
+                    <div class="form-group">
+                        <input type="text" id="full-name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group-row">
+                        <input type="email" id="email" placeholder="Email ID" required>
+                        <input type="tel" id="phone" placeholder="Phone Number" required>
+                    </div>
+                    <button type="submit" class="btn-primary btn-full">Book now</button>
+                </form>
+                <div id="confirmation-message" class="confirmation-text"></div>
             </div>
         </div>
     </section>
 
-    <section class="quality-section" id="quality">
-        <div class="quality-container">
-            <div class="quality-card">
-                <div class="quality-icon"><i class="fa-solid fa-soap"></i></div>
-                <h4>Premium Services</h4>
-                <p>Elevate your wardrobe with our meticulous dry cleaning, ensuring garments look and feel brand new.</p>
-            </div>
-            <div class="quality-card">
-                <div class="quality-icon"><i class="fa-solid fa-headset"></i></div>
-                <h4>Quick Support</h4>
-                <p>We're committed to providing prompt solutions to ensure your experience is smooth and worry-free.</p>
-            </div>
-            <div class="quality-card">
-                <div class="quality-icon"><i class="fa-solid fa-truck-fast"></i></div>
-                <h4>Hassle Free Delivery</h4>
-                <p>Enjoy seamless service with our convenient pickup and delivery options, tailored to your schedule.</p>
-            </div>
-            <div class="quality-card">
-                <div class="quality-icon"><i class="fa-solid fa-tags"></i></div>
-                <h4>Affordable Prices</h4>
-                <p>Experience exceptional care without breaking the bank — our affordable prices make laundry day stress-free.</p>
-            </div>
+    <!-- Quality Description Section -->
+    <section id="quality-section" class="quality-container">
+        <div class="quality-card">
+            <h4>Premium Services</h4>
+            <p>Elevate your wardrobe with our meticulous dry cleaning ensuring garments look and feel brand new.</p>
+        </div>
+        <div class="quality-card">
+            <h4>Quick Support</h4>
+            <p>We are committed to providing prompt solutions to ensure your experience is smooth and worry-free.</p>
+        </div>
+        <div class="quality-card">
+            <h4>Hassle Free Delivery</h4>
+            <p>Enjoy seamless service with our convenient pickup and delivery options tailored to your schedule.</p>
+        </div>
+        <div class="quality-card">
+            <h4>Affordable Prices</h4>
+            <p>Experience exceptional care without breaking the bank — our prices make laundry day stress-free.</p>
         </div>
     </section>
 
-    <section class="newsletter-section">
-        <div class="newsletter-container">
-            <h2>Subscribe to our newsletter.</h2>
-            <form class="newsletter-form" id="newsletterForm">
-                <input type="text" placeholder="Full name" required>
-                <input type="email" placeholder="Email" required>
-                <button type="submit" class="btn-subscribe">Subscribe</button>
-            </form>
-        </div>
+    <!-- Newsletter Subscription Section -->
+    <section class="newsletter-container">
+        <h3>Subscribe to our newsletter.</h3>
+        <form id="newsletter-form" class="newsletter-form">
+            <input type="text" placeholder="Full name" required>
+            <input type="email" placeholder="Email" required>
+            <button type="submit" class="btn-secondary">Subscribe</button>
+        </form>
     </section>
 
-    <footer class="footer" id="contact">
-        <div class="footer-container">
-            <div class="footer-col brand-col">
-                <div class="logo">
-                    <i class="fa-solid fa-shirt"></i>
-                    <span>VelvetClean</span>
-                </div>
-                <p class="about-text">
-                    Your trusted companion for eco-friendly, premium fabric care. Bringing freshness to your doorstep every day.
-                </p>
-            </div>
-            <div class="footer-col">
-                <h4>Important Links</h4>
-                <ul>
-                    <li><a href="#quality">About us</a></li>
-                    <li><a href="#contact">Contact us</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of use</a></li>
-                    <li><a href="#">Refund Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p><i class="fa-solid fa-envelope"></i> support@velvetclean.com</p>
-                <p><i class="fa-solid fa-phone"></i> +91 91234 56780</p>
-            </div>
-            <div class="footer-col">
-                <h4>Follow Us</h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                </div>
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="footer-column">
+            <h3>FreshClean</h3>
+            <p>About us<br>Lorem ipsum dolor sit amet, consectetur. Sed at congue.</p>
+        </div>
+        <div class="footer-column">
+            <h4>Important Links</h4>
+            <ul>
+                <li><a href="#quality-section">About us</a></li>
+                <li><a href="#footer">Contact us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of use</a></li>
+                <li><a href="#">Refund Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Contact</h4>
+            <p>mail@site.com</p>
+            <p>+91 91234 56780</p>
+        </div>
+        <div class="footer-column">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+                <a href="#">Instagram</a> | 
+                <a href="#">Facebook</a> | 
+                <a href="#">Twitter</a>
             </div>
         </div>
     </footer>
 
-    <script src="email.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
